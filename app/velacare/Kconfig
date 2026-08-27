@@ -1,0 +1,3 @@
+config LVX_USE_DEMO_CONTEST2026_438_VELACARE
+    bool "VelaCare family health guardian"
+    default n

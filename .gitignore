@@ -1,0 +1,37 @@
+# 编译产物
+build/
+out/
+nuttx/nuttx
+nuttx/nuttx.bin
+nuttx/nuttx.hex
+nuttx/nuttx.map
+nuttx/include/nuttx/config.h
+nuttx/include/nuttx/version.h
+nuttx/.config
+nuttx/.version
+nuttx/tools/mksyscall
+nuttx/drivers/built-in.a
+nuttx/libs/libxx/built-in.a
+nuttx/fs/built-in.a
+nuttx/arch/built-in.a
+*.o
+*.a
+*.elf
+*.hex
+*.map
+
+# 工具链（已在 prebuilts 下通过软链引入，不重复提交）
+toolchain/
+
+# VS Code / 编辑器
+.vscode/
+*.swp
+*.swo
+
+# 系统文件
+.DS_Store
+Thumbs.db
+
+# Python
+__pycache__/
+*.pyc
