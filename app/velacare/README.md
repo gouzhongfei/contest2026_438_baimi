@@ -9,11 +9,11 @@ VelaCare 是一个运行在 D12x 开发板（匠芯创 RISC-V SoC）上的**家�
 
 | 特性 | 说明 |
 | --- | --- |
-| 4 级健康状态机 | NORMAL → ATTENTION → WARNING → EMERGENCY，外加 OFFLINE 离线态 |
+| 5 级健康状态机 | NORMAL → ATTENTION → WARNING → EMERGENCY → OFFLINE |
 | Skill 技能系统 | 通过 ai_agent 加载 Markdown 格式的技能，按需调用 |
 | 多模态提示 | LVGL 屏显 + TTS 语音 + 离线日志 |
 | 本地优先 | 传感器数据本地聚合，异常先在本地判定，再决定是否上云 |
-| 离线运行 | 网络断开时自动降级到 NORMAL 模式，仍可监控 |
+| 离线运行 | WiFi 断开超过 60 秒自动降级到 OFFLINE 模式，仍可本地监控 |
 
 ## 目录结构
 
@@ -24,8 +24,8 @@ app/velacare/
 ├── Make.defs              ← NuttX Make.defs 集成
 ├── Makefile               ← NuttX 应用 Makefile
 ├── velacare_main.c        ← 主入口，1Hz 状态机循环
-├── velacare_state.h/.c    ← 4 级状态机（核心）
-├── velacare_sensor.h/.c   ← 传感器抽象（温度/湿度/烟雾/红外/毫米波）
+├── velacare_state.h/.c    ← 5 级状态机（核心）
+├── velacare_sensor.h/.c   ← 传感器抽象（烟感/水浸/门磁/跌倒检测）
 ├── velacare_skill.h/.c    ← Skill 加载与意图识别
 ├── velacare_lvgl.h/.c     ← LVGL 屏显界面（5 状态配色）
 ├── velacare_tts.h/.c      ← TTS 语音播报
@@ -36,11 +36,11 @@ app/velacare/
 
 | 状态 | 触发条件 | UI 颜色 |
 | --- | --- | --- |
-| NORMAL | 一切正常 | 绿色 |
-| ATTENTION | 单指标连续 5 分钟超阈值 | 黄色 |
-| WARNING | ATTENTION 持续 1 分钟未解除 | 橙色 |
-| EMERGENCY | WARNING 持续 30 秒仍异常 | 红色 + TTS 告警 |
-| OFFLINE | 60 秒无数据上报 | 灰色 |
+| NORMAL | 一切正常，传感器在线 | 绿色 |
+| ATTENTION | 传感器失联超过 5 分钟 | 黄色 |
+| WARNING | 传感器真报警（烟感/水浸/门磁/跌倒） | 橙色 |
+| EMERGENCY | WARNING 持续 30 秒未确认，自动升级 | 红色 + TTS 告警 |
+| OFFLINE | WiFi 断开超过 60 秒 | 灰色 |
 
 ## 编译验证
 
