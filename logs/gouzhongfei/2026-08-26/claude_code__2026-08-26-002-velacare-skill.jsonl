@@ -1,0 +1,5 @@
+{"type": "session_meta", "tool": "claude_code", "sid": "2026-08-26-002-velacare-skill", "started_at": "2026-08-26T10:12:00+00:00", "user": "baimi-team"}
+{"type": "turn", "role": "user", "content": "4 个 Skill 按官方 4 段式 (When to use / How to use / Example) 写, 给老人家庭照护用", "ts": "2026-08-26T10:12:00+00:00"}
+{"type": "turn", "role": "assistant", "content": "好的 4 个 Skill:\n- home-safety-guard: 烟感/水浸/燃气\n- elder-care-reminder: 久坐提醒/吃药\n- routine-scheduler: 早 8 晚 8 总结\n- emergency-broadcast: 紧急广播推送飞书微信\n都按官方 # 标题 / When to use / How to use / Example 4 段式, 触发场景 3-4 个/文件", "ts": "2026-08-26T10:24:00+00:00"}
+{"type": "turn", "role": "user", "content": "我评审会问 LLM 怎么调这些 Skill, 给我个调用示例", "ts": "2026-08-26T10:36:00+00:00"}
+{"type": "turn", "role": "assistant", "content": "velacare_skill.c 调 skill_loader 包装 + cron_add 注册, 比如:\n```c\ncron_add_job(0 8 * * *, skill_routine_morning);\ncron_add_job(0 20 * * *, skill_routine_evening);\ncron_add_job(*/5 * * * *, skill_safety_check);\n```\n对应 4 个 Skill 入口函数, 走 ai_agent 消息总线", "ts": "2026-08-26T10:48:00+00:00"}

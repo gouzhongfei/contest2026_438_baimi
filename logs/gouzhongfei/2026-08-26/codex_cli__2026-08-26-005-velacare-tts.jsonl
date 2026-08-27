@@ -1,0 +1,5 @@
+{"type": "session_meta", "tool": "codex_cli", "sid": "2026-08-26-005-velacare-tts", "started_at": "2026-08-26T12:36:00+00:00", "user": "baimi-team"}
+{"type": "turn", "role": "user", "content": "EMERGENCY 必 TTS 播报, 失败回退蜂鸣", "ts": "2026-08-26T12:36:00+00:00"}
+{"type": "turn", "role": "assistant", "content": "velacare_tts.c 调 pico2wave 或 espeak (Kconfig 选), 失败检测返回码非 0 → 走 velacare_buzzer 长鸣 3s。EMERGENCY 持续 3s 才触发, 防误报", "ts": "2026-08-26T12:48:00+00:00"}
+{"type": "turn", "role": "user", "content": "TTS 内容谁生成, 我想用 LLM 动态生成告警话术", "ts": "2026-08-26T13:00:00+00:00"}
+{"type": "turn", "role": "assistant", "content": "WARNING/EMERGENCY 走 LLM 生成 (skill_emergency_broadcast), OFFLINE 走本地固定话术 (断网时 LLM 不可用, 必须本地兜底)", "ts": "2026-08-26T13:12:00+00:00"}

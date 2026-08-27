@@ -1,0 +1,14 @@
+{
+  "github_login": "gouzhongfei",
+  "team": "baimi",
+  "team_id": 438,
+  "sessions": [
+    {"date": "2026-08-26", "tool": "codex_cli", "file": "codex_cli__2026-08-26-001-velacare-state.jsonl", "topic": "velacare state machine"},
+    {"date": "2026-08-26", "tool": "claude_code", "file": "claude_code__2026-08-26-002-velacare-skill.jsonl", "topic": "velacare skill loader"},
+    {"date": "2026-08-26", "tool": "codex_cli", "file": "codex_cli__2026-08-26-003-velacare-lvgl.jsonl", "topic": "velacare lvgl ui"},
+    {"date": "2026-08-26", "tool": "claude_code", "file": "claude_code__2026-08-26-004-velacare-cron.jsonl", "topic": "velacare cron scheduler"},
+    {"date": "2026-08-26", "tool": "codex_cli", "file": "codex_cli__2026-08-26-005-velacare-tts.jsonl", "topic": "velacare tts"},
+    {"date": "2026-08-26", "tool": "claude_code", "file": "claude_code__2026-08-26-006-velacare-wifi.jsonl", "topic": "velacare wifi"},
+    {"date": "2026-08-26", "tool": "codex_cli", "file": "codex_cli__2026-08-26-007-velacare-docs.jsonl", "topic": "velacare docs"}
+  ]
+}

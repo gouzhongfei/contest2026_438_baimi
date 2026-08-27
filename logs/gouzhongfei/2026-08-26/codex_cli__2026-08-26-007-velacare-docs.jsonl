@@ -1,0 +1,5 @@
+{"type": "session_meta", "tool": "codex_cli", "sid": "2026-08-26-007-velacare-docs", "started_at": "2026-08-26T14:12:00+00:00", "user": "baimi-team"}
+{"type": "turn", "role": "user", "content": "README 怎么写, 评审 6 个维度 (技术 30 / 创新 20 / 完整 20 / AI 10 / 商业 10 / 展示 10)", "ts": "2026-08-26T14:12:00+00:00"}
+{"type": "turn", "role": "assistant", "content": "README-template.md 6 段:\n1. 一句话简介 (VelaCare 4 级状态机)\n2. 选赛道理由 (AI 硬件 + 主动智能 + Skill 系统)\n3. 目录结构 (app/velacare/ 全栈)\n4. 运行方式 (4 步: pull/build/burn/verify)\n5. AI Coding 使用说明 (4 环节 + 日志导出)\n6. 6 维评审对照表 (每维度 3-5 行 bullet)", "ts": "2026-08-26T14:24:00+00:00"}
+{"type": "turn", "role": "user", "content": "PR 描述我怕太长, 给我压缩版", "ts": "2026-08-26T14:36:00+00:00"}
+{"type": "turn", "role": "assistant", "content": "pr-template.md: 作品名 + 队伍 + 赛道 + 一句话 + 改动 + 核心能力 (打勾 5 行) + 测试情况 (打勾 6 行) + AI Coding (3 行) + 截图视频 + 自检 5 项", "ts": "2026-08-26T14:48:00+00:00"}
